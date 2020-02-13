@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Bobbing 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="canvas" width="400" height="400"></canvas>
+    <script src="../include/utils.js"></script>
+    <script src="../classes/ball.js"></script>
+    <script>
+        window.onload = function () {
+            var canvas = document.getElementById('canvas'),
+                context = canvas.getContext('2d'),
+                ball = new Ball(),
+                ball1 = new Ball(),
+                ball2 = new Ball(),
+                ball3 = new Ball(),
+                ball4 = new Ball(),
+                angle = 0;
+
+            ball.x = canvas.width / 2;
+            ball.y = canvas.height / 2;
+
+            ball1.x = canvas.width / 4;
+            ball1.y = canvas.height / 4;
+
+            ball2.x = canvas.width / 1.3;
+            ball2.y = canvas.height / 4;
+            
+            ball3.x = canvas.width / 4;
+            ball3.y = canvas.height / 1.3;
+            
+            ball4.x = canvas.width / 1.3;
+            ball4.y = canvas.height / 1.3;
+
+
+            (function drawFrame() {
+                window.requestAnimationFrame(drawFrame, canvas);
+                context.clearRect(0, 0, canvas.width, canvas.height);
+
+                // ball.x = canvas.width / 2 + Math.cos(angle) * 50;
+                ball.y = canvas.height / 2 + Math.sin(angle) * 50;
+
+                ball1.x = canvas.width / 4 + Math.cos(angle) * 50;
+                // ball1.y = canvas.height / 4 + Math.sin(angle) * 50;
+
+                ball2.x = canvas.width / 1.3+ Math.cos(angle) * 50;
+                ball2.y = canvas.height / 4 + Math.sin(angle) * 50;
+
+                ball3.x = canvas.width / 4 + Math.sin(angle) * 50;
+                ball3.y = canvas.height / 1.3 + Math.cos(angle) * 50;
+
+                ball4.x = canvas.width / 1.3 + Math.sin(angle) * 50;
+                ball4.y = canvas.height / 1.3 + Math.sin(angle) * 50;
+                
+                angle += 0.1;
+
+                ball.draw(context);
+                ball1.draw(context)
+                ball2.draw(context)
+                ball3.draw(context)
+                ball4.draw(context)
+            }());
+        };
+    </script>
+</body>
+
+</html>
