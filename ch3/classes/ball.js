@@ -3,7 +3,8 @@ function Ball(radius, color) {
         radius = 40;
     }
     if (color === undefined) {
-        color = "#ff0000";
+        // color = "#adfd1d";
+        color = "fd1dad";
     }
     this.x = 0;
     this.y = 0;
