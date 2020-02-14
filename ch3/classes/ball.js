@@ -1,13 +1,13 @@
-function Ball(radius, color) {
+function Ball(x, y, radius, color) {
     if (radius === undefined) {
         radius = 40;
     }
     if (color === undefined) {
         // color = "#adfd1d";
-        color = "fd1dad";
+        color = "#fd1dad";
     }
-    this.x = 0;
-    this.y = 0;
+    this.x = x || 0;
+    this.y = y || 0;
     this.radius = radius;
     this.rotation = 0;
     this.scaleX = 1;
@@ -32,3 +32,27 @@ Ball.prototype.draw = function (context) {
     }
     context.restore();
 };
+
+Ball.prototype.dance = function(action, angle) {
+    this.color = `rgb(${Math.random()*256},${Math.random()*1},${Math.random()*1})`
+    switch(action){
+        case 1:
+            this.y = this.y + Math.sin(angle) * 50;
+            break;
+        case 2:
+            this.x = this.x + Math.cos(angle) * 50;
+            break
+        case 3:
+            this.x = this.x +Math.cos(angle) * 50;
+            this.y = this.y + Math.sin(angle) * 50;
+            break;
+        case 4:
+            this.x = this.x  + Math.sin(angle) * 50;
+            this.y = this.y  + Math.cos(angle) * 50;
+            break;
+        case 5:
+            this.x = this.x + Math.sin(angle) * 50;
+            this.y = this.y + Math.sin(angle) * 50;
+            break;   
+    }
+}
