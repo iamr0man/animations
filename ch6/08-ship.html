@@ -42,16 +42,18 @@
           vr = 3;
           break;
         case 38:      //up
-          thrust = 0.05;
+          thrust = 0.3;
           ship.showFlame = true;
           break;
         }
       }, false);
 
-      window.addEventListener('keyup', function () {
+      window.addEventListener('keyup', function (e) {
+        if(e.keyCode === 38) {
+          thrust = 0;
+          ship.showFlame = false;
+        }
         vr = 0;
-        thrust = 0;
-        ship.showFlame = false;
       }, false);
 
       (function drawFrame () {
