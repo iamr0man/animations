@@ -28,7 +28,7 @@
           vx = 0,
           vy = 0,
           thrust = 0
-          friction = 0.97;
+          friction = 0.99;
 
       ship.x = canvas.width / 2;
       ship.y = canvas.height / 2;
@@ -72,12 +72,12 @@
         vx += ax;
         vy += ay;
         vx *= friction;
-        vy *= friction
+        vy *= friction;
         ship.x += vx;
         ship.y += vy;
         
         if (ship.x - ship.width > right) {
-          ship.x = ship.width;
+          ship.x = 0;
         } else if (ship.x + ship.width < left) {
           ship.x = right + ship.width;
         }

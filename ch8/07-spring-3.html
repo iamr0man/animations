@@ -19,11 +19,11 @@
           context = canvas.getContext('2d'),
           ball = new Ball(),
           spring = 0.03,
-          friction = 0.95,
+          friction = 0.9,
           targetX = canvas.width / 2,
           targetY = canvas.height / 2,
-          vx = -50,
-          vy = 0;
+          vx = 50,
+          vy = -50;
 
       (function drawFrame () {
         window.requestAnimationFrame(drawFrame, canvas);
