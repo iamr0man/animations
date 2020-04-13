@@ -1,0 +1,30 @@
+i'm take responsibility for my acivity;
+photoshop and read smth it's not very efficient in this time;
+i want to fun with animations!
+///
+
+
+const x1 = centerX - ball.x;
+const y1 = centerY - ball.y;
+
+const x2 = Math.cos(angle) * x1 - Math.sin(angle) * x1;
+const y2 = Math.cos(angle) * x1 + Math.sin(angle) * y1;
+
+ball.x = centerX + x2;
+ball.y = centerY + y2;
+
+
+take rotation for adjust cos and sin;
+
+get position of ball, relative to line;
+
+rotate coordinates 
+( -> in which side need to move obj);
+
+rotate velocity;
+
+perform bounce with rotated values
+
+
+
+
