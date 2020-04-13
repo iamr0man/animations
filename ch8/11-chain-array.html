@@ -21,7 +21,7 @@
           mouse = utils.captureMouse(canvas),
           balls = [],
           balls2 = [],
-          numBalls = 5,
+          numBalls = 2,
           spring = 0.03,
           friction = 0.85,
           gravity = 2;
@@ -58,27 +58,13 @@
         ballB.draw(context);
       }
 
-      function drawRight(ballB, i) {
-        //if first ball, move to mouse
-        if (i === 0) {
-          move(ballB, mouse.x, mouse.y);
-          context.moveTo(mouse.x, mouse.y);
-        } else {
-          var ballA = balls[i-1];
-          move(ballB, ballA.x, ballA.y);
-          context.moveTo(ballA.x, ballA.y);
-        }
-        context.lineTo(ballB.x, ballB.y);
-        context.stroke();
-        ballB.draw(context);
-      }
-
       (function drawFrame () {
         window.requestAnimationFrame(drawFrame, canvas);
         context.clearRect(0, 0, canvas.width, canvas.height);
 
         context.beginPath();
-        balls.forEach(draw);
+        console.log(balls);
+        balls.forEach(draw)
       }());
     };
     </script>
